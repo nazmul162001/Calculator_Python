@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z1!(xxf5foman7t&%j5fjvz_hq1l4e=7li0(%pk6d3@eja^*y2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['calculator-python-icfi.onrender.com']
 
 
 # Application definition
@@ -124,6 +124,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
 
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
